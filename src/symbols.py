@@ -1,0 +1,5 @@
+SHIP = chr(4)
+EMPTY = chr(183)
+MISS = chr(164)
+get_letter = lambda i: chr(65 + i)
+print_symbol = lambda ascii_code, count: print(chr(ascii_code) * count)

@@ -1,3 +1,14 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+from src.board import Board
+from src.prompt import start
+
+start()
+
+player = Board(4, "Player")
+computer = Board(4, "Computer")
+
+
+def print_all_ascii_symbols():
+    for i in range(256):
+        print(f"{i}: {chr(i)}")
+
+# print_all_ascii_symbols()
