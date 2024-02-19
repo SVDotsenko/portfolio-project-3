@@ -1,7 +1,7 @@
 from enum import Enum
 
-BOARD_SIZE = 3
-NUMBER_OF_SHIPS = 4
+BOARD_SIZE = 5
+NUMBER_OF_SHIPS = 3
 
 SHIP = chr(119)
 EMPTY = chr(183)
