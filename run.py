@@ -1,5 +1,3 @@
-# todo implement abstract class for board
-
 # todo валидация строк и столбцов (буквы)
 # todo валидация что пользователь уже вводил эти координаты
 
@@ -10,10 +8,9 @@
 # todo check the code thorough validator pip8online.com
 # todo write readme.md
 
-from src.board import Board
-from src.constants import Player
+from src.board import ComputerBoard, HumanBoard
 from src.new_game import new_game
 from src.prompt import start
 
 start()
-new_game(Board(Player.HUMAN), Board(Player.COMPUTER))
+new_game(HumanBoard(), ComputerBoard())
