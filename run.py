@@ -1,14 +1,7 @@
 from src.board import Board
+from src.enums import Player
+from src.new_game import new_game
 from src.prompt import start
 
 start()
-
-player = Board(4, "Player")
-computer = Board(4, "Computer")
-
-
-def print_all_ascii_symbols():
-    for i in range(256):
-        print(f"{i}: {chr(i)}")
-
-# print_all_ascii_symbols()
+new_game(Board(4, Player.HUMAN), Board(4, Player.COMPUTER))
