@@ -1,5 +1,5 @@
-from src.symbols import HIT, MISS, SHIP
-from src.symbols import print_symbol
+from src.constants import HIT, MISS, SHIP
+from src.constants import print_symbol
 
 
 def new_game(human_board, computer_board):
