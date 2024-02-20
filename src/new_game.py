@@ -1,11 +1,14 @@
-from src.constants import HIT, MISS, SHIP
 from src.constants import print_symbol
-from src.validations import get_coordinate
+from src.utilities import guess, get_coordinate
+from src.validations import validate_was_coordinate_used
 
 
 def new_game(human_board, computer_board):
     row = get_coordinate("Guess a row:")
     col = get_coordinate("Guess a column:")
+
+    if validate_was_coordinate_used(row - 1, col - 1, computer_board):
+        return new_game(human_board, computer_board)
     print(f'Player guessed: ({row}, {col})')
     if guess(computer_board, row - 1, col - 1):
         print("Player hit this time.")
@@ -13,7 +16,7 @@ def new_game(human_board, computer_board):
         print("Player missed this time.")
 
     (row, col) = computer_board.computer_guesses.pop().popitem()
-    print(f'Computer guessed: ({row}, {col})')
+    print(f'Computer guessed: ({row + 1}, {col + 1})')
     if guess(human_board, row, col):
         print("Computer hit this time.")
     else:
@@ -32,9 +35,3 @@ def new_game(human_board, computer_board):
         new_game(human_board, computer_board)
 
 
-def guess(board, row, col):
-    if board.grid[row][col] == SHIP:
-        board.grid[row][col] = HIT
-        return True
-    board.grid[row][col] = MISS
-    return False

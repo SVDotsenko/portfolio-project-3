@@ -1,17 +1,6 @@
 import re
 
-from src.constants import BOARD_SIZE
-
-
-def get_coordinate(prompt):
-    current_coordinate = get_value(prompt)
-    if validate_is_number(current_coordinate) and validate_is_in_range(int(current_coordinate)):
-        return int(current_coordinate)
-    return get_coordinate(prompt)
-
-
-def get_value(prompt):
-    return input(prompt + "\n")
+from src.constants import BOARD_SIZE, HIT, MISS
 
 
 def validate_is_number(value):
@@ -25,4 +14,11 @@ def validate_is_in_range(value):
     if 1 <= value <= BOARD_SIZE:
         return True
     print(f"\033[91mThe value must be in the range from 1 to {BOARD_SIZE}\033[0m")
+    return False
+
+
+def validate_was_coordinate_used(row, col, board):
+    if board.grid[row][col] == HIT or board.grid[row][col] == MISS:
+        print("\033[91mYou have already guessed this coordinate\033[0m")
+        return True
     return False

@@ -47,7 +47,8 @@ class ComputerBoard(Board):
         random.shuffle(self.computer_guesses)
         self.print_board()
 
-    def hide_ships(self, arr):
+    @staticmethod
+    def hide_ships(arr):
         new_arr = []
         for e in arr:
             new_arr.append(EMPTY if e == SHIP else e)
