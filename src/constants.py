@@ -1,5 +1,5 @@
-BOARD_SIZE = 4
-NUMBER_OF_SHIPS = 1
+BOARD_SIZE = 3
+NUMBER_OF_SHIPS = 5
 
 color_blue = lambda string: "\033[94m" + string + "\033[0m"
 color_red = lambda string: "\033[91m" + string + "\033[0m"

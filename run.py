@@ -1,5 +1,4 @@
 # todo read requirements, what else can be added
-# todo add description to each method
 # todo check the code thorough validator pip8online.com
 # todo write readme.md
 

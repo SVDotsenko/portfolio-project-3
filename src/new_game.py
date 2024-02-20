@@ -3,6 +3,13 @@ from src.validations import validate_was_coordinate_used, validate_is_game_over
 
 
 def new_game(human_board, computer_board):
+    """
+    Starts a new game of battleship.
+
+    Args:
+        human_board (Board): The board representing the human player's ships.
+        computer_board (Board): The board representing the computer player's ships.
+    """
     row = get_coordinate("Guess a row:")
     col = get_coordinate("Guess a column:")
 
