@@ -1,6 +1,6 @@
 import random
 
-from src.constants import EMPTY, SHIP, HIT, get_letter, print_symbol, BOARD_SIZE, NUMBER_OF_SHIPS
+from src.constants import EMPTY, SHIP, HIT, print_symbol, BOARD_SIZE, NUMBER_OF_SHIPS
 
 
 class Board:
@@ -32,7 +32,7 @@ class Board:
 
     def print_board(self):
         print(self.player_name + "'s Board:")
-        print('   ' + ' '.join([get_letter(i) for i in range(BOARD_SIZE)]))
+        print('   ' + ' '.join([str(i + 1) for i in range(BOARD_SIZE)]))
 
 
 class ComputerBoard(Board):

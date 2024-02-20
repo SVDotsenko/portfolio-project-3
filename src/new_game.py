@@ -1,12 +1,13 @@
 from src.constants import HIT, MISS, SHIP
 from src.constants import print_symbol
+from src.validations import get_coordinate
 
 
 def new_game(human_board, computer_board):
-    row = input("Guess a row:\n")
-    col = input("Guess a column:\n")
+    row = get_coordinate("Guess a row:")
+    col = get_coordinate("Guess a column:")
     print(f'Player guessed: ({row}, {col})')
-    if guess(computer_board, int(row) - 1, int(col) - 1):
+    if guess(computer_board, row - 1, col - 1):
         print("Player hit this time.")
     else:
         print("Player missed this time.")
