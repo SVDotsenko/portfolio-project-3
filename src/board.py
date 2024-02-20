@@ -1,6 +1,7 @@
 import random
 
-from src.constants import EMPTY, SHIP, HIT, print_symbol, BOARD_SIZE, NUMBER_OF_SHIPS
+from src.constants import EMPTY, SHIP, HIT, BOARD_SIZE, NUMBER_OF_SHIPS
+from src.utilities import print_symbol
 
 
 class Board:
@@ -57,7 +58,8 @@ class ComputerBoard(Board):
     def print_board(self):
         super().print_board()
         for i in range(BOARD_SIZE):
-            print(f'{i + 1:2d} ' + ' '.join(self.hide_ships(self.grid[i])))
+            # print(f'{i + 1:2d} ' + ' '.join(self.hide_ships(self.grid[i])))
+            print(f'{i + 1:2d} ' + ' '.join(self.grid[i]))
 
 
 class HumanBoard(Board):

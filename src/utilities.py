@@ -1,8 +1,10 @@
-from src.constants import SHIP, HIT, MISS, print_symbol, BOARD_SIZE, NUMBER_OF_SHIPS
+from src.constants import SHIP, HIT, MISS, BOARD_SIZE, NUMBER_OF_SHIPS
 from src.validations import validate_is_number, validate_is_in_range
 
+print_symbol = lambda ascii_code, count: print(chr(ascii_code) * count)
 
-def start():
+
+def welcome():
     print_symbol(22, 33)
     print("Welcome to ULTIMATE BATTLESHIPS!!")
     print(f'Board Size: {BOARD_SIZE}. Number of ships: {NUMBER_OF_SHIPS}')

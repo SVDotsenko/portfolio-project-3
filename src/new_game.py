@@ -1,6 +1,5 @@
-from src.constants import print_symbol
-from src.utilities import guess, get_coordinate
-from src.validations import validate_was_coordinate_used
+from src.utilities import guess, get_coordinate, print_symbol
+from src.validations import validate_was_coordinate_used, validate_is_game_over
 
 
 def new_game(human_board, computer_board):
@@ -30,6 +29,9 @@ def new_game(human_board, computer_board):
 
     human_board.print_board()
     computer_board.print_board()
+
+    if validate_is_game_over(human_board, computer_board):
+        return
 
     if input("Enter any key to continue or q to quit:\n").lower() != 'q':
         new_game(human_board, computer_board)
