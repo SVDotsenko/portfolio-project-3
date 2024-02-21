@@ -30,7 +30,6 @@ def new_game(human_board, computer_board):
 
     print_symbol(22, 33)
     print("After this round, the score are:")
-
     print(f'Player: {computer_board.count_hits()}. Computer: {human_board.count_hits()}')
     print_symbol(22, 33)
 

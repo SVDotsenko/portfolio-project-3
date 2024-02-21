@@ -1,6 +1,6 @@
 import random
 
-from src.constants import EMPTY, SHIP, HIT, BOARD_SIZE, NUMBER_OF_SHIPS
+from src.constants import EMPTY, SHIP, HIT, BOARD_SIZE, NUMBER_OF_SHIPS, color_yellow
 from src.utilities import print_symbol
 
 
@@ -68,6 +68,7 @@ class ComputerBoard(Board):
     def __init__(self):
         super().__init__()
         self.computer_guesses = []
+        self.show_ships = input(color_yellow('Show Computer\'s ships? y - yes, other key - no:\n'))
         for i in range(BOARD_SIZE):
             for j in range(BOARD_SIZE):
                 self.computer_guesses.append({j: i})
@@ -99,8 +100,10 @@ class ComputerBoard(Board):
         """
         super().print_board()
         for i in range(BOARD_SIZE):
-            # print(f'{i + 1:2d} ' + ' '.join(self.hide_ships(self.grid[i])))
-            print(f'{i + 1:2d} ' + ' '.join(self.grid[i]))
+            if self.show_ships.lower() == 'y':
+                print(f'{i + 1:2d} ' + ' '.join(self.grid[i]))
+            else:
+                print(f'{i + 1:2d} ' + ' '.join(self.hide_ships(self.grid[i])))
 
 
 class HumanBoard(Board):
