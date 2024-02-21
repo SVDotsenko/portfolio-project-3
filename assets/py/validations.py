@@ -1,6 +1,6 @@
 import re
 
-from src.constants import BOARD_SIZE, HIT, MISS, NUMBER_OF_SHIPS, color_red
+from assets.py.constants import BOARD_SIZE, HIT, MISS, NUMBER_OF_SHIPS, color_red
 
 
 def validate_is_number(value):

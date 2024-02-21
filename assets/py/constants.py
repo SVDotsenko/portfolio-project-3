@@ -7,5 +7,6 @@ color_yellow = lambda string: "\033[93m" + string + "\033[0m"
 
 SHIP = chr(119)
 EMPTY = chr(183)
+EQUAL_SIGN = chr(61)
 HIT = color_red(chr(88))
 MISS = color_blue(chr(164))

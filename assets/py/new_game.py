@@ -1,5 +1,6 @@
-from src.utilities import guess, get_coordinate, print_symbol
-from src.validations import validate_was_coordinate_used, validate_is_game_over
+from assets.py.constants import EQUAL_SIGN
+from assets.py.utilities import guess, get_coordinate, print_symbol
+from assets.py.validations import validate_was_coordinate_used, validate_is_game_over
 
 
 def new_game(human_board, computer_board):
@@ -28,10 +29,10 @@ def new_game(human_board, computer_board):
     else:
         print("Computer missed this time.")
 
-    print_symbol(22, 33)
+    print_symbol(EQUAL_SIGN, 33)
     print("After this round, the score are:")
     print(f'Player: {computer_board.count_hits()}. Computer: {human_board.count_hits()}')
-    print_symbol(22, 33)
+    print_symbol(EQUAL_SIGN, 33)
 
     human_board.print_board()
     computer_board.print_board()

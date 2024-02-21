@@ -1,17 +1,17 @@
-from src.constants import SHIP, HIT, MISS, BOARD_SIZE, NUMBER_OF_SHIPS
-from src.validations import validate_is_number, validate_is_in_range
+from assets.py.constants import SHIP, HIT, MISS, BOARD_SIZE, NUMBER_OF_SHIPS, EQUAL_SIGN
+from assets.py.validations import validate_is_number, validate_is_in_range
 
-print_symbol = lambda ascii_code, count: print(chr(ascii_code) * count)
+print_symbol = lambda ascii_code, count: print(ascii_code * count)
 
 
 def welcome():
     """
     Prints a welcome message for the game ULTIMATE BATTLESHIPS, along with the board size and number of ships.
     """
-    print_symbol(22, 33)
+    print_symbol(EQUAL_SIGN, 33)
     print("Welcome to ULTIMATE BATTLESHIPS!!")
     print(f'Board Size: {BOARD_SIZE}. Number of ships: {NUMBER_OF_SHIPS}')
-    print_symbol(22, 33)
+    print_symbol(EQUAL_SIGN, 33)
 
 
 def guess(board, row, col):

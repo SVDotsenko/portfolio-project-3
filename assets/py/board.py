@@ -1,7 +1,7 @@
 import random
 
-from src.constants import EMPTY, SHIP, HIT, BOARD_SIZE, NUMBER_OF_SHIPS, color_yellow
-from src.utilities import print_symbol
+from assets.py.constants import EMPTY, SHIP, HIT, BOARD_SIZE, NUMBER_OF_SHIPS, color_yellow, EQUAL_SIGN
+from assets.py.utilities import print_symbol
 
 
 class Board:
@@ -123,7 +123,7 @@ class HumanBoard(Board):
     def __init__(self):
         super().__init__()
         self.player_name = input("Please enter your name:\n")
-        print_symbol(22, 33)
+        print_symbol(EQUAL_SIGN, 33)
         self.print_board()
 
     def print_board(self):

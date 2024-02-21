@@ -1,10 +1,9 @@
-# todo read requirements, what else can be added
-# todo check the code thorough validator pip8online.com
 # todo write readme.md
+# todo how check in pycharm if the code is good (pip8online.com)
 
-from src.board import ComputerBoard, HumanBoard
-from src.new_game import new_game
-from src.utilities import welcome
+from assets.py.board import ComputerBoard, HumanBoard
+from assets.py.new_game import new_game
+from assets.py.utilities import welcome
 
 welcome()
 new_game(HumanBoard(), ComputerBoard())
