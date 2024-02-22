@@ -1,7 +1,19 @@
-from assets.py.constants import SHIP, HIT, MISS, BOARD_SIZE, NUMBER_OF_SHIPS, EQUAL_SIGN
+from assets.py.constants import SHIP, HIT, MISS, SIZE, SHIPS, EQUAL_SIGN
 from assets.py.validations import validate_is_number, validate_is_in_range
 
-print_symbol = lambda ascii_code, count: print(ascii_code * count)
+
+def print_symbol(symbol, count):
+    """
+    Prints a given symbol a specified number of times.
+
+    Args:
+        symbol (str): The symbol to be printed.
+        count (int): The number of times the symbol should be printed.
+
+    Returns:
+        None
+    """
+    return print(symbol * count)
 
 
 def welcome():
@@ -10,7 +22,7 @@ def welcome():
     """
     print_symbol(EQUAL_SIGN, 33)
     print("Welcome to ULTIMATE BATTLESHIPS!!")
-    print(f'Board Size: {BOARD_SIZE}. Number of ships: {NUMBER_OF_SHIPS}')
+    print(f'Board Size: {SIZE}. Number of ships: {SHIPS}')
     print_symbol(EQUAL_SIGN, 33)
 
 

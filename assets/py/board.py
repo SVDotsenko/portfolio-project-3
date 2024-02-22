@@ -1,6 +1,6 @@
 import random
 
-from assets.py.constants import EMPTY, SHIP, HIT, BOARD_SIZE, NUMBER_OF_SHIPS, color_yellow, EQUAL_SIGN
+from assets.py.constants import EMPTY, SHIP, HIT, SIZE, SHIPS, color_yellow, EQUAL_SIGN
 from assets.py.utilities import print_symbol
 
 
@@ -14,7 +14,7 @@ class Board:
     """
 
     def __init__(self):
-        self.grid = [[None] * BOARD_SIZE for _ in range(BOARD_SIZE)]
+        self.grid = [[None] * SIZE for _ in range(SIZE)]
         self.player_name = "Computer"
         self.add_random_ships()
 
@@ -23,9 +23,9 @@ class Board:
         Adds random ships to the board grid.
         """
 
-        arr = [EMPTY] * BOARD_SIZE * BOARD_SIZE
+        arr = [EMPTY] * SIZE * SIZE
 
-        for i in range(NUMBER_OF_SHIPS):
+        for i in range(SHIPS):
             arr[i] = SHIP
 
         random.shuffle(arr)
@@ -55,7 +55,7 @@ class Board:
         """
 
         print(self.player_name + "'s Board:")
-        print('   ' + ' '.join([str(i + 1) for i in range(BOARD_SIZE)]))
+        print('   ' + ' '.join([str(i + 1) for i in range(SIZE)]))
 
 
 class ComputerBoard(Board):
@@ -68,9 +68,10 @@ class ComputerBoard(Board):
     def __init__(self):
         super().__init__()
         self.computer_guesses = []
-        self.show_ships = input(color_yellow('Show Computer\'s ships? y - yes, other key - no:\n'))
-        for i in range(BOARD_SIZE):
-            for j in range(BOARD_SIZE):
+        self.show_ships = input(color_yellow(
+            'Show Computer\'s ships? y - yes, other key - no:\n'))
+        for i in range(SIZE):
+            for j in range(SIZE):
                 self.computer_guesses.append({j: i})
 
         random.shuffle(self.computer_guesses)
@@ -96,10 +97,11 @@ class ComputerBoard(Board):
         """
         Prints the computer's game board.
 
-        Overrides the print_board method of the parent class to include additional functionality specific to the computer's board.
+        Overrides the print_board method of the parent class to include additional functionality specific to the
+        computer's board.
         """
         super().print_board()
-        for i in range(BOARD_SIZE):
+        for i in range(SIZE):
             if self.show_ships.lower() == 'y':
                 print(f'{i + 1:2d} ' + ' '.join(self.grid[i]))
             else:
@@ -131,5 +133,5 @@ class HumanBoard(Board):
         Prints the board with the player's name and grid.
         """
         super().print_board()
-        for i in range(BOARD_SIZE):
+        for i in range(SIZE):
             print(f'{i + 1:2d} ' + ' '.join(self.grid[i]))

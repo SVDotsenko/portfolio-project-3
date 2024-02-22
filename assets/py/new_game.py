@@ -42,5 +42,3 @@ def new_game(human_board, computer_board):
 
     if input("Enter any key to continue or q to quit:\n").lower() != 'q':
         new_game(human_board, computer_board)
-
-

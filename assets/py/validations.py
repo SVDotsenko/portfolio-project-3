@@ -1,6 +1,6 @@
 import re
 
-from assets.py.constants import BOARD_SIZE, HIT, MISS, NUMBER_OF_SHIPS, color_red
+from assets.py.constants import SIZE, HIT, MISS, SHIPS, color_red
 
 
 def validate_is_number(value):
@@ -29,9 +29,9 @@ def validate_is_in_range(value):
     Returns:
     bool: True if the value is within the range, False otherwise.
     """
-    if 1 <= value <= BOARD_SIZE:
+    if 1 <= value <= SIZE:
         return True
-    print(color_red(f"The value must be in the range from 1 to {BOARD_SIZE}"))
+    print(color_red(f"The value must be in the range from 1 to {SIZE}"))
     return False
 
 
@@ -56,19 +56,19 @@ def validate_was_coordinate_used(row, col, board):
 def validate_is_game_over(human_board, computer_board):
     """
     Checks if the game is over by counting the number of hits on the human and computer boards.
-    
+
     Args:
         human_board (Board): The human player's game board.
         computer_board (Board): The computer player's game board.
-    
+
     Returns:
         bool: True if the game is over, False otherwise.
     """
-    final_message = lambda string: "Game over. " + string
-    if human_board.count_hits() == NUMBER_OF_SHIPS:
+    def final_message(string): return "Game over. " + string
+    if human_board.count_hits() == SHIPS:
         print(color_red(final_message("You lose!!!")))
         return True
-    if computer_board.count_hits() == NUMBER_OF_SHIPS:
+    if computer_board.count_hits() == SHIPS:
         print(color_red(final_message("You win!!!")))
         return True
     return False

@@ -1,32 +1,96 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# ULTIMATE Battleships
 
-Welcome,
+Ultimate Battleships is a Python terminal game, whick runs in the Code Institute mock terminal on Heroku
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+Users can try beat the computer by finding all of the computer's battleships before the computer finds theirs. Each battleship occupies one square on the board.
 
-## Reminders
+[Here is the live version of my project.](https://pp3-battle-ship-ca770c61df83.herokuapp.com)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+![Mockup](assets/images/mockups.png)
 
-## Creating the Heroku app
+## How to play
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Ultimate Battleships is based on the classic pen-and-paper game.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+In this version, the player enters their name and two boards are randomly generated.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The player can see where their ships are, indicated by a 'w' letter. In my version I implemented feature to see Computer's ships for testing purposes.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Guesses are marked on the board with ascii-symbol 164 colored in blue. Hits are indicated by X colored in red.
 
-Connect your GitHub repository and deploy as normal.
+The player and the computer then take it in turns to make guesses and try to sink each other's battelships.
 
-## Constraints
+The winner is the player who sinks all of their opponent's battleships first.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Features
 
----
+### Existing Features
 
-Happy coding!
+- Random board generation
+  - Ships are randomly placed on both the player and computer boards
+  - There is an option to switch on to see computer's ships to check that after winning the game is finished correctly.
+
+![Show ships](assets/images/show-ships.png)
+
+- Play against the computer
+- Accept user input
+- Maintains scores
+
+![Scores](assets/images/scores.png)
+
+- Input validation and error-checking
+  - You cannot enter coordinates outside the size of the grid
+  - You must enter numbers
+  - You cannot enter the same guess twice
+
+![Validations](assets/images/validations.png)
+
+- Data maintained in class instances
+
+## Future Features
+
+- Allow player to select the board size and number of ships
+- Allow player to position ship's themselves
+- Have ships larger than 1x1
+
+## Data Model
+
+I decided to use a Boar class as my model. Then two child classes are inherited from this class, each of which has its own specifics, but the names of the methods of the heirs are the same as those of the parent class. The game creates two instances of the child's classes to hold the player's and computer's board.
+
+The parent class stores grid and the player name. Information about ships, where they are plaсed, hits, misses is stored in the grid, and is agregated on fly when it is nessesary.
+
+The parent class also has methods to help play the game, such as print_board method to print out the current board, an add_random_ships method to add ships to the board.
+
+## Testing
+
+I have manually tested this project by doing the following:
+
+- Passed the code through a PEP8 linter and confirmed there no problems
+- Given invalid inputs: strings when numbers are expected, out of bounds inputs, same input twice
+- Tested in my local terminal and the Code Institute Heroku terminal
+
+## Remaining Bugs
+
+- No bugs remaining
+
+### Validator Testing
+
+- PEP8
+  - I used PyCharm for code inspection
+  
+
+  ![Start inspection](assets/images/start-inspection.png)
+  - There were not find any issues in my code
+  
+  ![Inspection result](assets/images/result-inspection.png)
+
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+- Steps for deployment:
+  - Fork or clone this repository
+  - Create a new Heroku app
+  - Set the buildbacks to Python and NodeJS in that order
+  - Link the Heroku app to the repository
+  - Click on Deploy
