@@ -57,6 +57,13 @@ def get_coordinate(prompt):
 
 
 def get_user_name():
+    """
+    Prompts the user to enter their name and returns it if it is valid.
+
+    Returns:
+        str: The user's name.
+
+    """
     user_name = input("Please enter your name:\n").strip()
     if validate_user_name(user_name):
         return user_name

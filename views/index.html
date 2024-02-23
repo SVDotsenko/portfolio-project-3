@@ -8,7 +8,8 @@
             rows: 24
         });
         term.open(document.getElementById('terminal'));
-        term.writeln('v. 0.0.7\nRunning startup command: python3 run.py');
+        term.writeln('v. 0.0.8');
+        term.writeln('Running startup command: python3 run.py');
         term.writeln('');
 
         const ws = new WebSocket(location.protocol.replace('http', 'ws') + '//' + location.hostname + (location.port ? (

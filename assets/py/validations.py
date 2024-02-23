@@ -75,4 +75,13 @@ def validate_is_game_over(human_board, computer_board):
 
 
 def validate_user_name(user_name):
+    """
+    Validates if the username contains only alphabetic characters.
+
+    Parameters:
+    user_name (str): The username to be validated.
+
+    Returns:
+    bool: True if the username contains only alphabetic characters, False otherwise.
+    """
     return any(char.isalpha() for char in user_name)

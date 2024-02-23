@@ -22,7 +22,6 @@ class Board:
         """
         Adds random ships to the board grid.
         """
-
         arr = [EMPTY] * SIZE * SIZE
 
         for i in range(SHIPS):
@@ -41,7 +40,6 @@ class Board:
         Returns:
         - hit_count: An integer representing the number of hits.
         """
-
         hit_count = 0
         for row in self.grid:
             for cell in row:
@@ -53,7 +51,6 @@ class Board:
         """
         Prints the board grid.
         """
-
         print(self.player_name + "'s Board:")
         print('   ' + ' '.join([str(i + 1) for i in range(SIZE)]))
 
