@@ -1,8 +1,9 @@
 # ULTIMATE Battleships
 
-Ultimate Battleships is a Python terminal game, whick runs in the Code Institute mock terminal on Heroku
+Ultimate Battleships is a Python terminal game, which runs in the Code Institute mock terminal on Heroku
 
-Users can try beat the computer by finding all of the computer's battleships before the computer finds theirs. Each battleship occupies one square on the board.
+Users can try beat the computer by finding all the computer's battleships before the computer finds theirs. Each
+battleship occupies one square on the board.
 
 [Here is the live version of my project.](https://pp3-battle-ship-ca770c61df83.herokuapp.com)
 
@@ -18,7 +19,7 @@ The player can see where their ships are, indicated by a 'w' letter. In my versi
 
 Guesses are marked on the board with ascii-symbol 164 colored in blue. Hits are indicated by X colored in red.
 
-The player and the computer then take it in turns to make guesses and try to sink each other's battelships.
+The player and the computer then take it in turns to make guesses and try to sink each other's battleships.
 
 The winner is the player who sinks all of their opponent's battleships first.
 
@@ -55,9 +56,12 @@ The winner is the player who sinks all of their opponent's battleships first.
 
 ## Data Model
 
-I decided to use a Boar class as my model. Then two child classes are inherited from this class, each of which has its own specifics, but the names of the methods of the heirs are the same as those of the parent class. The game creates two instances of the child's classes to hold the player's and computer's board.
+I decided to use a Board class as my model. Then two child classes are inherited from this class, each of which has its
+own specifics, but the names of the methods of the heirs are the same as those of the parent class. The game creates two
+instances of the child's classes to hold the player's and computer's board.
 
-The parent class stores grid and the player name. Information about ships, where they are plaсed, hits, misses is stored in the grid, and is agregated on fly when it is nessesary.
+The parent class stores grid and the player name. Information about ships, where they are plaсed, hits, misses is stored
+in the grid, and is aggregated on fly when it is necessary.
 
 The parent class also has methods to help play the game, such as print_board method to print out the current board, an add_random_ships method to add ships to the board.
 
@@ -82,7 +86,8 @@ I have manually tested this project by doing the following:
   
 
   ![Start inspection](assets/images/start-inspection.png)
-  - There were not find any issues in my code
+
+- There were no find any issues in my code
   
   ![Inspection result](assets/images/result-inspection.png)
 
@@ -93,6 +98,6 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 - Steps for deployment:
   - Fork or clone this repository
   - Create a new Heroku app
-  - Set the buildbacks to Python and NodeJS in that order
+  - Set the build backs to Python and Node.js in that order
   - Link the Heroku app to the repository
   - Click on Deploy

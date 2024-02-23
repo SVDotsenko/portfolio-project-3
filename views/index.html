@@ -1,5 +1,5 @@
 <body>
-<button onclick="window.location.reload()">Run Program (v. 0.0.6)</button>
+<button onclick="window.location.reload()">Run Program</button>
     <div id="terminal"></div>
 
     <script>
@@ -8,7 +8,7 @@
             rows: 24
         });
         term.open(document.getElementById('terminal'));
-        term.writeln('Running startup command: python3 run.py');
+        term.writeln('v. 0.0.7\nRunning startup command: python3 run.py');
         term.writeln('');
 
         const ws = new WebSocket(location.protocol.replace('http', 'ws') + '//' + location.hostname + (location.port ? (

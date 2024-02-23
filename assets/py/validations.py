@@ -72,3 +72,7 @@ def validate_is_game_over(human_board, computer_board):
         print(color_red(final_message("You win!!!")))
         return True
     return False
+
+
+def validate_user_name(user_name):
+    return any(char.isalpha() for char in user_name)

@@ -1,5 +1,5 @@
-from assets.py.constants import SHIP, HIT, MISS, SIZE, SHIPS, EQUAL_SIGN
-from assets.py.validations import validate_is_number, validate_is_in_range
+from assets.py.constants import SHIP, HIT, MISS, SIZE, SHIPS, EQUAL_SIGN, color_red
+from assets.py.validations import validate_is_number, validate_is_in_range, validate_user_name
 
 
 def print_symbol(symbol, count):
@@ -54,3 +54,11 @@ def get_coordinate(prompt):
     if validate_is_number(current_coordinate) and validate_is_in_range(int(current_coordinate)):
         return int(current_coordinate)
     return get_coordinate(prompt)
+
+
+def get_user_name():
+    user_name = input("Please enter your name:\n").strip()
+    if validate_user_name(user_name):
+        return user_name
+    print(color_red("Please enter a valid name"))
+    return get_user_name()
