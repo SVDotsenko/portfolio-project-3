@@ -68,8 +68,7 @@ class ComputerBoard(Board):
     def __init__(self):
         super().__init__()
         self.computer_guesses = []
-        self.show_ships = input(color_yellow(
-            'Show Computer\'s ships? y - yes, other key - no:\n'))
+        self.show_ships = input(color_yellow('Show Computer\'s ships? y - yes, other key - no:\n'))
         for i in range(SIZE):
             for j in range(SIZE):
                 self.computer_guesses.append({j: i})
