@@ -61,7 +61,7 @@ The parent class stores grid and the player name. Information about ships, where
 
 The parent class also has methods to help play the game, such as print_board method to print out the current board, an add_random_ships method to add ships to the board.
 
-![UML](assets/images/UML.png)
+![UML](assets/images/uml-diagram.png)
 
 ## Testing
 
