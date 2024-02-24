@@ -101,3 +101,11 @@ This project was deployed using Code Institute's mock terminal for Heroku.
   - Set the build backs to Python and Node.js in that order
   - Link the Heroku app to the repository
   - Click on Deploy
+
+It is possible to run the application locally.
+
+- Steps to run locally:
+    - The game can be run locally by following the installation steps:
+    - Clone the repository: `git clone https://github.com/SVDotsenko/portfolio-project-3.git`
+    - Navigate to the project directory: `cd portfolio-project-3`
+    - Run the game: `python run.py`
