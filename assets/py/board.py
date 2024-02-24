@@ -1,6 +1,7 @@
 import random
 
-from assets.py.constants import EMPTY, SHIP, HIT, SIZE, SHIPS, color_yellow, EQUAL_SIGN
+from assets.py.constants import EMPTY, SHIP, HIT, SIZE, SHIPS, color_yellow, \
+    EQUAL_SIGN
 from assets.py.utilities import print_symbol, get_user_name
 
 
@@ -59,13 +60,15 @@ class ComputerBoard(Board):
     """
     Represents the computer's game board.
 
-    Inherits from the Board class and adds additional functionality specific to the computer's board.
+    Inherits from the Board class and adds additional functionality specific
+    to the computer's board.
     """
 
     def __init__(self):
         super().__init__()
         self.computer_guesses = []
-        self.show_ships = input(color_yellow('Show Computer\'s ships? y - yes, other key - no:\n'))
+        self.show_ships = input(
+            color_yellow('Show Computer\'s ships? y - yes, other key - no:\n'))
         for i in range(SIZE):
             for j in range(SIZE):
                 self.computer_guesses.append({j: i})
@@ -93,8 +96,8 @@ class ComputerBoard(Board):
         """
         Prints the computer's game board.
 
-        Overrides the print_board method of the parent class to include additional functionality specific to the
-        computer's board.
+        Overrides the print_board method of the parent class to include
+        additional functionality specific to the computer's board.
         """
         super().print_board()
         for i in range(SIZE):

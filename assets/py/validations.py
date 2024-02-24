@@ -55,7 +55,8 @@ def validate_was_coordinate_used(row, col, board):
 
 def validate_is_game_over(human_board, computer_board):
     """
-    Checks if the game is over by counting the number of hits on the human and computer boards.
+    Checks if the game is over by counting the number of hits on the human
+    and computer boards.
 
     Args:
         human_board (Board): The human player's game board.
@@ -81,7 +82,7 @@ def validate_user_name(user_name):
     Parameters:
     user_name (str): The username to be validated.
 
-    Returns:
-    bool: True if the username contains only alphabetic characters, False otherwise.
+    Returns: bool: True if the username contains only alphabetic characters,
+    False otherwise.
     """
     return any(char.isalpha() for char in user_name)

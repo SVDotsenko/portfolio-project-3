@@ -7,7 +7,8 @@ EQUAL_SIGN = chr(61)
 
 def color_blue(string):
     """
-    Returns the input string wrapped in ANSI escape codes to display it in blue color in the console.
+    Returns the input string wrapped in ANSI escape codes to display it in
+    blue color in the console.
 
     Parameters:
     string (str): The string to be displayed in blue color.
@@ -20,7 +21,8 @@ def color_blue(string):
 
 def color_red(string):
     """
-    Returns the given string wrapped in ANSI escape codes to display it in red color.
+    Returns the given string wrapped in ANSI escape codes to display it in
+    red color.
 
     Parameters:
     string (str): The string to be colored red.
@@ -33,7 +35,8 @@ def color_red(string):
 
 def color_yellow(string):
     """
-    Returns the input string wrapped in ANSI escape codes to display it in yellow color in the console.
+    Returns the input string wrapped in ANSI escape codes to display it in
+    yellow color in the console.
 
     Parameters:
     string (str): The string to be wrapped.
